@@ -40,6 +40,11 @@ jobs:
       - name: Terraform init
         run: terraform init
         working-directory: ./terraformfiles
+        env: 
+           ARM_CLIENT_ID:       ${{ secrets.ARM_CLIENT_ID }}
+           ARM_CLIENT_SECRET:   ${{ secrets.ARM_CLIENT_SECRET }}
+           ARM_TENANT_ID:       ${{ secrets.ARM_TENANT_ID }}
+           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
 
 
       - name: Terraform validate
@@ -49,4 +54,10 @@ jobs:
       - name: Terraform plan
         run: terraform plan
         working-directory: ./terraformfiles
+        env: 
+           ARM_CLIENT_ID:       ${{ secrets.ARM_CLIENT_ID }}
+           ARM_CLIENT_SECRET:   ${{ secrets.ARM_CLIENT_SECRET }}
+           ARM_TENANT_ID:       ${{ secrets.ARM_TENANT_ID }}
+           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+
 
