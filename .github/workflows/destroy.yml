@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Terraform-apply
+name: Terraform-destroy
 
 # Controls when the workflow will run
 on:
@@ -58,8 +58,9 @@ jobs:
            ARM_TENANT_ID:       ${{ secrets.ARM_TENANT_ID }}
            ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
 
-      - name: Terraform apply
-        run: terraform apply --auto-approve
+
+      - name: Terraform destroy
+        run: terraform destroy --auto-approve
         working-directory: ./terraformfiles
         env: 
            ARM_CLIENT_ID:       ${{ secrets.ARM_CLIENT_ID }}
