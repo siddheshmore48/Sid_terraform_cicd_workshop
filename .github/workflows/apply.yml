@@ -59,7 +59,7 @@ jobs:
            ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
 
       - name: Terraform apply
-        run: terraform apply -auto-approve
+        run: terraform apply --auto-approve
         working-directory: ./terraformfiles
         env: 
            ARM_CLIENT_ID:       ${{ secrets.ARM_CLIENT_ID }}
